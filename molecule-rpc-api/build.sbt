@@ -1,7 +1,7 @@
-import play.sbt.PlayImport.PlayKeys
 
 lazy val root = (project in file("."))
   .aggregate(client, server, shared.js, shared.jvm)
+  .settings(name := "molecule-rpc-api")
 
 
 lazy val client = (project in file("client"))

@@ -2,16 +2,14 @@
 
 Minimal project showing how to set up Molecule with Datomic Peer. 
 
-1. `git clone https://github.com/scalamolecule/molecule-samples.git`
-2. `cd molecule-samples/molecule-basic`
-3. `sbt compile -Dmolecule=true`
-4. Open project and test in your IDE
+```
+git clone https://github.com/scalamolecule/molecule-samples.git
+cd molecule-samples/molecule-basic
+sbt clean compile -Dmolecule=true
+sbt run # Bob's age: 42
+```
 
-
-In your IDE, you can test to
-- define more attributes in the `PersonDataModel` 
-- `sbt compile -Dmolecule=true` your project
-- create molecules with your new attributes
+Define more attributes in `PersonDataModel` and run `sbt clean compile -Dmolecule=true` to re-generate boilerplate code. Try using your new attributes to add and query data.
 
 
 _See [ScalaMolecule.org](http://scalamolecule.org) for more info._

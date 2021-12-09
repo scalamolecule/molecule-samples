@@ -1,6 +1,7 @@
 
 lazy val root = (project in file("."))
   .aggregate(client, server, shared.js, shared.jvm)
+  .settings(name := "molecule-rpc-transparent")
 
 
 lazy val client = (project in file("client"))

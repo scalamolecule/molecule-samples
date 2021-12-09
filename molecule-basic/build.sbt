@@ -27,6 +27,6 @@ lazy val `molecule-basic` = project.in(file("."))
     // In a scalajs or datomic pro setup it's not necessary
     Compile / classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.Flat,
 
-    // Let Intellij detect sbt-molecule-created jars in unmanaged lib directory
+    // Let Intellij detect jars created by sbt-molecule in unmanaged lib directory
     exportJars := true
   )

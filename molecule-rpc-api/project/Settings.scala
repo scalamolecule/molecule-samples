@@ -54,7 +54,7 @@ object Settings {
     moleculePluginActive := sys.props.get("molecule").contains("true"),
     moleculeDataModelPaths := Seq("db"), // path to data model
 
-    // Let IntelliJ detect sbt-molecule-created jars in unmanaged lib directory
+    // Let Intellij detect jars created by sbt-molecule in unmanaged lib directory
     exportJars := true
   )
 }
