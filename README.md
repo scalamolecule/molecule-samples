@@ -5,7 +5,7 @@ This repo contains 3 sample projects with minimal setups to use [Molecule](http:
 
 ### molecule-basic
 
-Basic jvm project. 
+Basic Play project on jvm only. 
 ```
 git clone https://github.com/scalamolecule/molecule-samples.git
 cd molecule-samples/molecule-basic
