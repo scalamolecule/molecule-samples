@@ -19,7 +19,7 @@ sbt run # prints "Bob's age: 42" in console
 Minimal Play app making RPC calls from the client to a shared api with server implementation to demonstrate traditional "manual RPC" calls.
 ```
 git clone https://github.com/scalamolecule/molecule-samples.git
-cd molecule-samples/molecule-rpc-transparent
+cd molecule-samples/molecule-rpc-api
 sbt clean compile -Dmolecule=true
 sbt run
 ```
