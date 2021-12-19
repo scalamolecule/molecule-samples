@@ -19,7 +19,7 @@ class AppController extends MoleculeRpcHandler("localhost", 9000)
 
 
   val router: Router[ByteBuffer, Future] = Router[ByteBuffer, Future]
-    .route[MoleculeRpc](DatomicRpc) // internal transparent molecule rpc routing
+    .route[MoleculeRpc](DatomicRpc()) // internal transparent molecule rpc routing
 
   def ajax(path: String): Action[RawBuffer] = {
     Action.async(parse.raw) { implicit ajaxRequest =>

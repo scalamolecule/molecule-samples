@@ -16,7 +16,7 @@ lazy val `molecule-basic` = project.in(file("."))
     ),
 
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
     ),
 
     // Generate Molecule boilerplate code with `sbt clean compile -Dmolecule=true`

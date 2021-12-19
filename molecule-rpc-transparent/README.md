@@ -5,7 +5,7 @@ Minimal Play project showing how to set up using transparent RPC calls with mole
 ```
 git clone https://github.com/scalamolecule/molecule-samples.git
 cd molecule-samples/molecule-rpc-transparent
-sbt clean compile -Dmolecule=true
+sbt compile -Dmolecule=true
 sbt run
 ```
 Open [http://localhost:9000](http://localhost:9000)

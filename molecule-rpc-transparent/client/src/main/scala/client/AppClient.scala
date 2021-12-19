@@ -8,7 +8,7 @@ import molecule.core.marshalling.DatomicPeerProxy
 import molecule.datomic.api._
 import org.scalajs.dom.document.body
 import scalatags.JsDom.all._
-import scala.concurrent.ExecutionContext.Implicits.global
+import org.scalajs.macrotaskexecutor.MacrotaskExecutor.Implicits._
 import scala.concurrent.Future
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 

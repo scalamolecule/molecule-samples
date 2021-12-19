@@ -11,21 +11,19 @@ object Settings {
 
   private val common: Seq[Def.Setting[_]] = Seq(
     organization := "org.scalamolecule",
-    version := "0.1.0",
+    version := "0.1.1",
     ThisBuild / scalaVersion := "2.13.7",
 
     // Access to free, but proprietary Client dev-local dependency needed.
     // Please download from https://cognitect.com/dev-tools and install locally per included instructions
     resolvers += Resolver.mavenLocal,
-
-    // Avoid Akka semver error
-    ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-java8-compat" % "always",
   )
 
   val client: Seq[Def.Setting[_]] = common ++ Seq(
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "1.2.0",
-      ("org.scalamolecule" %%% "molecule" % "1.0.0")
+      "org.scala-js" %%% "scalajs-dom" % "2.0.0",
+      "org.scala-js" %%% "scala-js-macrotask-executor" % "1.0.0",
+      ("org.scalamolecule" %%% "molecule" % "1.0.1")
         // Exclude datomic on js platform
         .exclude("com.datomic", "datomic-free")
     )
@@ -34,7 +32,7 @@ object Settings {
   val server: Seq[Def.Setting[_]] = common ++ Seq(
     resolvers += "clojars" at "https://clojars.org/repo",
     libraryDependencies ++= Seq(guice,
-      "org.scalamolecule" %% "molecule" % "1.0.0",
+      "org.scalamolecule" %% "molecule" % "1.0.1",
       "com.vmunier" %% "scalajs-scripts" % "1.2.0",
       "com.datomic" % "datomic-free" % "0.9.5697",
     ).map(_.exclude("org.slf4j", "slf4j-nop")),
@@ -45,9 +43,9 @@ object Settings {
 
   val shared: Seq[Def.Setting[_]] = common ++ Seq(
     libraryDependencies ++= Seq(
-      "com.lihaoyi" %%% "scalatags" % "0.9.4",
-      "io.suzaku" %%% "boopickle" % "1.3.3",
-      ("org.scalamolecule" %%% "molecule" % "1.0.0")
+      "com.lihaoyi" %%% "scalatags" % "0.11.0",
+      "io.suzaku" %%% "boopickle" % "1.4.0",
+      ("org.scalamolecule" %%% "molecule" % "1.0.1")
         // Exclude datomic on js platform
         .exclude("com.datomic", "datomic-free")
     ),

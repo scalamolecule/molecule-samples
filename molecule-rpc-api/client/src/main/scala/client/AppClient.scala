@@ -5,7 +5,7 @@ import molecule.core.marshalling.WebClient
 import org.scalajs.dom.document.body
 import scalatags.JsDom.all._
 import shared.PersonApi
-import scala.concurrent.ExecutionContext.Implicits.global
+import org.scalajs.macrotaskexecutor.MacrotaskExecutor.Implicits._
 import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 
