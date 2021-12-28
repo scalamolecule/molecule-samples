@@ -3,7 +3,7 @@ package controllers.molecule
 import java.nio.ByteBuffer
 import boopickle.Default._
 import cats.implicits._
-import molecule.core.marshalling.MoleculeRpcHandler
+import molecule.core.marshalling.MoleculeRpcResponse
 import play.api.mvc.{Action, AnyContent, InjectedController, RawBuffer}
 import server.PersonImpl
 import server.page.AppPage
@@ -13,7 +13,7 @@ import sloth._
 import scala.concurrent.Future
 
 
-class AppController extends MoleculeRpcHandler("localhost", 9000)
+class AppController extends MoleculeRpcResponse("localhost", 9000)
   with InjectedController with HtmlTag {
 
   def testPage: Action[AnyContent] = Action(Ok(AppPage()))
@@ -25,7 +25,7 @@ class AppController extends MoleculeRpcHandler("localhost", 9000)
   def ajax(path: String): Action[RawBuffer] = {
     Action.async(parse.raw) { implicit ajaxRequest =>
       val args = ajaxRequest.body.asBytes(parse.UNLIMITED).get
-      moleculeRpcResult(router, path, args).map(Ok(_))
+      moleculeRpcResponse(router, path, args.asByteBuffer).map(Ok(_))
     }
   }
 }

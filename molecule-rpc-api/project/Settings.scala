@@ -26,7 +26,7 @@ object Settings {
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.0.0",
       "org.scala-js" %%% "scala-js-macrotask-executor" % "1.0.0",
-      ("org.scalamolecule" %%% "molecule" % "1.0.1")
+      ("org.scalamolecule" %%% "molecule" % "1.0.3")
         // Exclude datomic on js platform
         .exclude("com.datomic", "datomic-free")
     )
@@ -35,7 +35,7 @@ object Settings {
   val server: Seq[Def.Setting[_]] = common ++ Seq(
     resolvers += "clojars" at "https://clojars.org/repo",
     libraryDependencies ++= Seq(guice,
-      "org.scalamolecule" %% "molecule" % "1.0.1",
+      "org.scalamolecule" %% "molecule" % "1.0.3",
       "com.vmunier" %% "scalajs-scripts" % "1.2.0",
       "com.datomic" % "datomic-free" % "0.9.5697",
     ).map(_.exclude("org.slf4j", "slf4j-nop")),
@@ -48,7 +48,7 @@ object Settings {
     libraryDependencies ++= Seq(
       "com.lihaoyi" %%% "scalatags" % "0.11.0",
       "io.suzaku" %%% "boopickle" % "1.4.0",
-      ("org.scalamolecule" %%% "molecule" % "1.0.1")
+      ("org.scalamolecule" %%% "molecule" % "1.0.3")
         // Exclude datomic on js platform
         .exclude("com.datomic", "datomic-free")
     ),
