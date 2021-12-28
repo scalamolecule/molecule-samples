@@ -40,8 +40,6 @@ sbt run
 ```
 Open [http://localhost:9000](http://localhost:9000) - will show "Bob's age: 42" in the browser.
 
-See implementation variations for Akka-Http and Http4s in the AppController file.
-
 
 ## Router definition and response
 
