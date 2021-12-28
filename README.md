@@ -75,7 +75,7 @@ val response: Future[Array[Byte]] =
 
 ### RPC with Akka-Http
 
-When setting up the Http server in Akka-Http, a `post` Directive can be setup like this:
+When setting up the Http server in Akka-Http, one or more `post` directives can be setup like this:
 ```scala
 path("ajax" / "MoleculeRpc" / Remaining) { method =>
   val pathStr = s"MoleculeRpc/$method"
@@ -98,14 +98,18 @@ path("ajax" / "MoleculeRpc" / Remaining) { method =>
       }
     }
   }
-}
+} ~
+  path("ajax" / "PersonApi" / Remaining) { method =>
+    val pathStr = s"PersonApi/$method"
+    post {
+      // same...
 ```
 See [an example](https://github.com/scalamolecule/molecule/blob/master/moleculeTests/jvm/src/main/scala/moleculeTests/MoleculeRpcServer.scala) of an Akka-Http server setup in MoleculeTests.
 
 
 ### RPC with Http4s
 
-In Http4s we can set up a POST route match to handle our molecule RPC calls:
+In Http4s we can set up one or more POST route matches (depending on how many apis we use) to handle our molecule RPC calls:
 ```scala
 def routes: ReaderT[IO, Request[IO], Response[IO]] = HttpRoutes.of[IO] {
   case ajaxRequest@POST -> Root / "ajax" / "MoleculeRpc" / method =>
@@ -114,6 +118,13 @@ def routes: ReaderT[IO, Request[IO], Response[IO]] = HttpRoutes.of[IO] {
         moleculeRpcResponse(router, s"MoleculeRpc/$method", ByteBuffer.wrap(argsData))
       ))
     ))
+  case ajaxRequest@POST -> Root / "ajax" / "PersonApi" / method =>
+    Ok(ajaxRequest.as[Array[Byte]].flatMap(argsData =>
+      IO.fromFuture(IO(
+        moleculeRpcResponse(router, s"PersonApi/$method", ByteBuffer.wrap(argsData))
+      ))
+    ))
+  // etc...
 }
 ```
 
