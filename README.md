@@ -1,6 +1,6 @@
 # Molecule sample projects
 
-This repo contains 3 sample Play projects with minimal setups to demonstrate how to use [molecules](http://scalamolecule.org) to fetch data from the [Datomic](https://www.datomic.com) database. Examples of Akka-Http and Http4s setups is shown below too.
+This repo contains various sample projects with minimal setups to demonstrate how to use [molecules](http://scalamolecule.org) with the [Datomic](https://www.datomic.com) database. Examples of Akka-Http and Http4s setups is shown below too.
 
 (The commands shown for each sample can be copied as a whole and pasted into a terminal window to get each sample up and running.)
 
@@ -11,11 +11,31 @@ Basic Play project on jvm only.
 git clone https://github.com/scalamolecule/molecule-samples.git
 cd molecule-samples/molecule-basic
 sbt clean compile -Dmolecule=true
-sbt run # prints "Bob's age: 42" in console
+sbt run # prints "SUCCESS: Bob's age is 42" in the console
 ```
 
+## 2. molecule-db-setups
 
-## 2. molecule-rpc-api (Play)
+This directory contains various minimal Datomic database setups that you can use as templates for your own project.
+
+Datomic has a Peer api and a Client api and Molecule targets both with a single api meaning that you can swap Datomic apis without changing your molecule code (except a few extra features offered by the Peer api).
+
+The Peer api is targeted at on-premise setups where the database lives in your application process on a server. The Client api is targeted at cloud setups with remote access to the database.
+
+Each api can be used as an in-memory database (useful for tests) or as a database persisted to disk.
+
+In each database setup sample project you'll find the necessary imports and settings to get going:
+
+  - datomic-client-devlocal
+  - datomic-client-peerserver
+  - datomic-client-peerserver_inmem
+  - datomic-peer-free
+  - datomic-peer-free_inmem
+  - datomic-peer-pro
+  - datomic-peer-pro_inmem
+
+
+## 3. molecule-rpc-api (Play)
 
 Minimal Play/Scala.js app making [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) calls from the client to a shared api with server implementation to demonstrate traditional "manual RPC" calls.
 ```
@@ -27,7 +47,7 @@ sbt run
 Open [http://localhost:9000](http://localhost:9000) - will show "Bob's age: 42" in the browser.
 
 
-## 3. molecule-rpc-transparent (Play)
+## 4. molecule-rpc-transparent (Play)
 
 Minimal Play/Scala.js app making molecule calls from the client to demonstrate transparent RPC calls where no shared api and server implementation is needed.
 ```

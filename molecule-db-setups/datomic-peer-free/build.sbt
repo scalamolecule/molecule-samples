@@ -3,13 +3,15 @@ import sbt.Keys._
 lazy val app = project.in(file("."))
   .enablePlugins(MoleculePlugin)
   .settings(
-    name := "molecule-basic",
+    name := "datomic-peer-free",
     scalaVersion := "2.13.8",
     resolvers ++= Seq(
-      "clojars" at "https://clojars.org/repo",
+      Resolver.sonatypeRepo("releases"),
+      "clojars" at "https://clojars.org/repo"
     ),
+
     libraryDependencies ++= Seq(
-      "org.scalamolecule" %% "molecule" % "1.1.0",
+      "org.scalamolecule" %% "molecule" % "1.1.0"
     ),
 
     // Generate Molecule boilerplate code with `sbt clean compile -Dmolecule=true`
