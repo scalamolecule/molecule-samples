@@ -1,7 +1,0 @@
-
-# Pages
-GET     /            controllers.molecule.AppController.testPage
-POST    /ajax/*path  controllers.molecule.AppController.ajax(path: String)
-
-# Assets
-GET     /assets/*file     controllers.Assets.at(path="/public", file)
