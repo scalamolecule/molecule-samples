@@ -16,6 +16,11 @@ testFrameworks := Seq(
   new TestFramework("zio.test.sbt.ZTestFramework")
 )
 
+// Run tests for all systems sequentially to avoid data locks with db
+// Only applies on JVM. On JS platform there's no parallelism anyway.
+Test / parallelExecution := false
+
+
 // Molecule plugin that generates molecule boilerplate code from your data model
 enablePlugins(MoleculePlugin)
 
