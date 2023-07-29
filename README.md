@@ -1,6 +1,6 @@
 # Molecule sample projects
 
-This repo contains sample molecule projects to get you started with [molecule](https://github.com/scalamolecule/molecule), the library to write Scala code to databases.
+This repo contains sample molecule projects to get you started with [molecule](https://github.com/scalamolecule/molecule).
 
 For now there's only a single sample project that targets Scala 3 or 2.13/2.12. The code is the same but the setup differs slightly. The Scala 3.x version generates source code while the 2.x generates code and packs it in jars placed in the lib folder. 
 
