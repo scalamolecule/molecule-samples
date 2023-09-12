@@ -27,9 +27,9 @@ Open in your IDE, compile and run test from there.
 For better compilation performance (in general):
 
 - Use java 20 as your default java version and for your Scala projects in your IDE.
-- Give sbt lots of memory.
+- Give sbt plenty of memory.
 
 In your ~/.bashrc file (on mac) or similar you can for instance set the following options (adjust to your system):
 
     export JAVA_HOME=`/usr/libexec/java_home -v 20.0.1`
-    export SBT_OPTS='-Xmx50G -Xms48G -Xss8M'
+    export SBT_OPTS='-Xmx24G -Xms20G -Xss8M'

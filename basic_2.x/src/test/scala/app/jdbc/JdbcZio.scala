@@ -4,7 +4,7 @@ import app.dsl.PersonDataModel._
 import app.schema.PersonDataModelSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
-import molecule.sql.jdbc.facade.JdbcHandler_jvm
+import molecule.sql.jdbc.facade.JdbcHandler_JVM
 import molecule.sql.jdbc.zio._
 import zio._
 import zio.test.TestAspect._
@@ -28,7 +28,7 @@ object JdbcZio extends ZIOSpecDefault {
     )
     ZLayer.scoped(
       ZIO.attemptBlocking(
-        JdbcHandler_jvm.recreateDb(proxy, url)
+        JdbcHandler_JVM.recreateDb(proxy)
       )
     )
   }

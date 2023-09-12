@@ -3,7 +3,7 @@ package app.jdbc
 import app.schema.PersonDataModelSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
-import molecule.sql.jdbc.facade.{JdbcConn_jvm, JdbcHandler_jvm}
+import molecule.sql.jdbc.facade.{JdbcConn_JVM, JdbcHandler_JVM}
 import scala.language.implicitConversions
 import scala.util.Random
 import scala.util.control.NonFatal
@@ -22,10 +22,10 @@ trait Helper {
       schema.attrMap,
       schema.uniqueAttrs
     )
-    var conn  = JdbcConn_jvm(proxy, null)
+    var conn  = JdbcConn_JVM(proxy, null)
     try {
       Class.forName("org.h2.Driver")
-      conn = JdbcHandler_jvm.recreateDb(proxy, url)
+      conn = JdbcHandler_JVM.recreateDb(proxy)
       test(conn)
     } catch {
       case NonFatal(exc) => throw exc
