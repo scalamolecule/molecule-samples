@@ -1,11 +1,11 @@
-package app.jdbc
+package app.h2
 
 import app.dsl.PersonDataModel._
-import molecule.sql.jdbc.sync._
+import molecule.sql.h2.sync._
 import utest._
 import scala.language.implicitConversions
 
-object JdbcSync extends TestSuite with Helper {
+object H2Sync extends TestSuite with Helper {
 
   override lazy val tests = Tests {
 

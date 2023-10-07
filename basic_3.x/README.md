@@ -3,7 +3,7 @@
 Compile, generate boilerplate code in jars and run tests:
 
     cd basic-3.x
-    sbt clean compile -Dmolecule=ture
+    sbt clean compile -Dmolecule=true
 
 Open in your IDE, compile and run test from there. 
 

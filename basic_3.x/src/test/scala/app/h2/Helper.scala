@@ -1,10 +1,9 @@
-package app.jdbc
+package app.h2
 
 import app.schema.PersonDataModelSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
-import molecule.sql.jdbc.facade.{JdbcConn_JVM, JdbcHandler_JVM}
-
+import molecule.sql.core.facade.{JdbcConn_JVM, JdbcHandler_JVM}
 import scala.language.implicitConversions
 import scala.util.Random
 import scala.util.control.NonFatal
@@ -17,7 +16,7 @@ trait Helper {
     val url   = s"jdbc:h2:mem:test_database_" + Random.nextInt()
     val proxy = JdbcProxy(
       url,
-      schema.sqlSchema("h2"),
+      schema.sqlSchema_h2,
       schema.metaSchema,
       schema.nsMap,
       schema.attrMap,

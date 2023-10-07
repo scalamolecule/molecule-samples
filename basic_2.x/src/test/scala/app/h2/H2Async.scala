@@ -1,12 +1,12 @@
-package app.jdbc
+package app.h2
 
 import app.dsl.PersonDataModel._
 import molecule.core.util.Executor._
-import molecule.sql.jdbc.async._
+import molecule.sql.h2.async._
 import utest._
 import scala.language.implicitConversions
 
-object JdbcAsync extends TestSuite with Helper {
+object H2Async extends TestSuite with Helper {
 
   override lazy val tests = Tests {
 

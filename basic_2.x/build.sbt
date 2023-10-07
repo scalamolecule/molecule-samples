@@ -1,6 +1,6 @@
 
 name := "basic_2.x"
-version := "0.2.0"
+version := "0.5.1"
 organization := "org.scalamolecule"
 
 // scalaVersion := "2.12.18" // swap and re-compile to test
@@ -8,8 +8,8 @@ scalaVersion := "2.13.12"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.1",
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.2.0",
-  "org.scalamolecule" %% "molecule-sql-jdbc" % "0.2.0",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.5.1",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.5.1",
 )
 testFrameworks := Seq(
   new TestFramework("utest.runner.Framework"),

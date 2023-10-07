@@ -1,15 +1,14 @@
 package app.datomic
 
-import app.dsl.PersonDataModel._
+import app.dsl.PersonDataModel.*
 import app.schema.PersonDataModelSchema
 import molecule.core.spi.Conn
-import molecule.core.util.Executor._
+import molecule.core.util.Executor.*
 import molecule.datalog.datomic.facade.DatomicPeer
-import molecule.datalog.datomic.spi.DatomicSpiZio
-import molecule.datalog.datomic.zio._
-import zio._
-import zio.test.TestAspect._
-import zio.test._
+import molecule.datalog.datomic.zio.*
+import zio.*
+import zio.test.*
+import zio.test.TestAspect.*
 
 object DatomicZio extends ZIOSpecDefault {
 
