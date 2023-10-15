@@ -7,4 +7,4 @@ Compile, generate boilerplate code in jars and run tests:
 
 Open in your IDE, compile and run test from there. 
 
-(Can't run tests in sbt since sbt doesn't pick up the classpath of generated code for some reason)
+(Can't run tests in sbt since sbt doesn't pick up the classpath of generated code packed as jars for some reason)
