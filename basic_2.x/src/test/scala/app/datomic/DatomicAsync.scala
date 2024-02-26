@@ -1,7 +1,7 @@
 package app.datomic
 
-import app.dsl.PersonDataModel._
-import app.schema.PersonDataModelSchema
+import app.dsl.Person._
+import app.schema.PersonSchema
 import molecule.core.util.Executor._
 import molecule.datalog.datomic.async._
 import molecule.datalog.datomic.facade.{DatomicConn_JVM, DatomicPeer}
@@ -10,7 +10,7 @@ import scala.concurrent.Future
 
 object DatomicAsync extends TestSuite {
 
-  def futConn: Future[DatomicConn_JVM] = DatomicPeer.recreateDb(PersonDataModelSchema)
+  def futConn: Future[DatomicConn_JVM] = DatomicPeer.recreateDb(PersonSchema)
 
   override lazy val tests = Tests {
 

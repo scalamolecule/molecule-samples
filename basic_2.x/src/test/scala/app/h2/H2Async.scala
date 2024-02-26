@@ -1,12 +1,12 @@
 package app.h2
 
-import app.dsl.PersonDataModel._
+import app.dsl.Person._
 import molecule.core.util.Executor._
 import molecule.sql.h2.async._
 import utest._
 import scala.language.implicitConversions
 
-object H2Async extends TestSuite with Helper {
+object H2Async extends TestSuite with Connection {
 
   override lazy val tests = Tests {
 

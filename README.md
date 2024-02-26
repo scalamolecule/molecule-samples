@@ -4,7 +4,7 @@ This repo contains sample molecule projects to get you started with [molecule](h
 
 For now there's only a single sample project that targets Scala 3 or 2.13/2.12. The code is the same but the setup differs slightly. The Scala 3.x version generates source code while the 2.x generates code and packs it in jars placed in the lib folder. 
 
-There seems to be some binary issue with generating jars for Scala 3.3 that needs to be solved. In the meanwhile you can just generate source code as is done in the basic-3.x project. Only difference is a single flag in the build file and whether you can modify the generated code (which you don't need to anyway).
+There seems to be some binary issue with generating jars for Scala 3.3 that needs to be solved. In the meanwhile you can just generate source code as is done in the basic-3.x project. Only difference is a single flag in the build file.
 
 
 ### basic-3.x

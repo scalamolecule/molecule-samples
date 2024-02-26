@@ -1,7 +1,7 @@
 package app.datomic
 
-import app.dsl.PersonDataModel._
-import app.schema.PersonDataModelSchema
+import app.dsl.Person._
+import app.schema.PersonSchema
 import molecule.core.spi.Conn
 import molecule.core.util.Executor._
 import molecule.datalog.datomic.facade.DatomicPeer
@@ -16,7 +16,7 @@ object DatomicZio extends ZIOSpecDefault {
   def personLayer[T]: ZLayer[T, Throwable, Conn] = {
     ZLayer.scoped(
       ZIO.fromFuture(
-        _ => DatomicPeer.recreateDb(PersonDataModelSchema)
+        _ => DatomicPeer.recreateDb(PersonSchema)
       )
     )
   }

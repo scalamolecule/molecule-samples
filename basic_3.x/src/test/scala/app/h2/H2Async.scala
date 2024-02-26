@@ -1,6 +1,6 @@
 package app.h2
 
-import app.dsl.PersonDataModel._
+import app.dsl.Person._
 import molecule.core.util.Executor._
 import molecule.sql.h2.async._
 import utest._

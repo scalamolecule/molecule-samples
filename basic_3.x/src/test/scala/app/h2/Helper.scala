@@ -1,6 +1,6 @@
 package app.h2
 
-import app.schema.PersonDataModelSchema
+import app.schema.PersonSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
 import molecule.sql.core.facade.{JdbcConn_JVM, JdbcHandler_JVM}
@@ -10,7 +10,7 @@ import scala.util.control.NonFatal
 
 trait Helper {
 
-  val schema = PersonDataModelSchema
+  val schema = PersonSchema
 
   def types[T](test: Conn => T): T = {
     val url   = s"jdbc:h2:mem:test_database_" + Random.nextInt()

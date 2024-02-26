@@ -1,7 +1,7 @@
 package app.h2
 
-import app.dsl.PersonDataModel.*
-import app.schema.PersonDataModelSchema
+import app.dsl.Person.*
+import app.schema.PersonSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
 import molecule.sql.core.facade.JdbcHandler_JVM
@@ -15,7 +15,7 @@ object H2Zio extends ZIOSpecDefault {
 
   // Convert Datomic-idiomatic blocking jdbc to ZIO Layer
   def personLayer[T]: ZLayer[T, Throwable, Conn] = {
-    val schema = PersonDataModelSchema
+    val schema = PersonSchema
     val url    = s"jdbc:h2:mem:test_database_" + Random.nextInt()
     val proxy  = JdbcProxy(
       url,
