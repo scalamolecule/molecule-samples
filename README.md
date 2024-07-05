@@ -1,6 +1,6 @@
 # Molecule sample projects
 
-This repo contains sample molecule projects to get you started with [molecule](https://github.com/scalamolecule/molecule).
+This repo contains sample projects to get you started with [molecule](https://github.com/scalamolecule/molecule).
 
 ### basic_3
 
