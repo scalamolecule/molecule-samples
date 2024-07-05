@@ -2,9 +2,9 @@
 
 Compile, generate boilerplate code in jars and run tests:
 
-    cd basic-3.x
+    cd basic_3
     sbt clean compile -Dmolecule=true
 
 Open in your IDE, compile and run test from there. 
 
-(Can't run tests in sbt since sbt doesn't pick up the classpath of generated code packed as jars for some reason)
+(Can't run tests in sbt for now - some issue with generated sources)

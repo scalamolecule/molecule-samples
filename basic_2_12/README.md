@@ -1,7 +1,7 @@
-## Test project using molecule with Scala 2.13 (or 2.12) 
+## Test project using molecule with Scala 2.12 
 
 Compile, generate boilerplate code in jars and run tests:
 
-    cd basic-2.x
+    cd basic_2_12
     sbt clean compile -Dmolecule=true
     sbt test

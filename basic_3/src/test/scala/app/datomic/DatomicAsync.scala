@@ -1,4 +1,4 @@
-package app
+package app.datomic
 
 import app.dsl.Person._
 import app.schema.PersonSchema
@@ -8,13 +8,13 @@ import molecule.datalog.datomic.facade.{DatomicConn_JVM, DatomicPeer}
 import utest._
 import scala.concurrent.Future
 
-object Test extends TestSuite {
+object DatomicAsync extends TestSuite {
 
   def futConn: Future[DatomicConn_JVM] = DatomicPeer.recreateDb(PersonSchema)
 
   override lazy val tests = Tests {
 
-    "test" - {
+    "async" - {
       futConn.flatMap { implicit conn =>
         for {
           _ <- Person.name("Bob").age(42).save.transact

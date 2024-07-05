@@ -7,17 +7,23 @@ For now there's only a single sample project that targets Scala 3 or 2.13/2.12. 
 There seems to be some binary issue with generating jars for Scala 3.3 that needs to be solved. In the meanwhile you can just generate source code as is done in the basic-3.x project. Only difference is a single flag in the build file.
 
 
-### basic-3.x
+### basic_3
 
-    cd basic-3.x
+    cd basic_3
     sbt clean compile -Dmolecule=ture
 
 Open in your IDE, compile and run test from there.
 
 
-### basic-2.x
+### basic_2_13
 
-    cd basic-2.x
+    cd basic_2_13
+    sbt clean compile -Dmolecule=ture
+    sbt test
+
+### basic_2_12
+
+    cd basic_2_12
     sbt clean compile -Dmolecule=ture
     sbt test
 
