@@ -25,3 +25,6 @@ enablePlugins(MoleculePlugin)
 moleculePluginActive := sys.props.get("molecule").contains("true")
 
 moleculeDataModelPaths := Seq("app")
+
+// Use generated source code (uncomment/delete to use default jar packaging)
+moleculeMakeJars := false
