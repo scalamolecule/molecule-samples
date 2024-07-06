@@ -1,5 +1,5 @@
 
-name := "app"
+name := "molecule-basic-3"
 version := "0.9.0"
 organization := "org.scalamolecule"
 scalaVersion := "3.3.3"

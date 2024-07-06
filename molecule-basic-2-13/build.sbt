@@ -1,9 +1,8 @@
 
-name := "app"
+name := "molecule-basic-2-13"
 version := "0.9.0"
 organization := "org.scalamolecule"
-
-scalaVersion := "2.12.19"
+scalaVersion := "2.13.14"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.3",
@@ -18,7 +17,6 @@ testFrameworks := Seq(
 // Run tests for all systems sequentially to avoid data locks with db
 // Only applies on JVM. On JS platform there's no parallelism anyway.
 Test / parallelExecution := false
-
 
 // Molecule plugin that generates molecule boilerplate code from your data model
 enablePlugins(MoleculePlugin)
