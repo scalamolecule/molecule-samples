@@ -2,7 +2,7 @@
 
 This repo contains sample projects to get you started with [molecule](https://github.com/scalamolecule/molecule).
 
-### Basic Scala 3
+### Basic Scala 3.3
 
     cd molecule-basic-3
     sbt clean compile -Dmolecule=true
