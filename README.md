@@ -6,9 +6,7 @@ This repo contains sample projects to get you started with [molecule](https://gi
 
     cd molecule-basic-3
     sbt clean compile -Dmolecule=true
-
-Open in your IDE, compile and run test from there.
-
+    sbt test
 
 ### basic_2_13
 

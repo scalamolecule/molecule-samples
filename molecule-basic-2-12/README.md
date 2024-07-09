@@ -2,6 +2,6 @@
 
 Compile, generate boilerplate code in jars and run tests:
 
-    cd basic_2_12
+    cd molecule-basic-2-12
     sbt clean compile -Dmolecule=true
     sbt test

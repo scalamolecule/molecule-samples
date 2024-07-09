@@ -1,13 +1,13 @@
 
 name := "molecule-basic-3"
-version := "0.9.0"
+version := "0.9.1"
 organization := "org.scalamolecule"
 scalaVersion := "3.3.3"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.3",
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.9.0",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.9.0",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.9.1",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.9.1",
 )
 testFrameworks := Seq(
   new TestFramework("utest.runner.Framework"),
@@ -25,8 +25,3 @@ enablePlugins(MoleculePlugin)
 moleculePluginActive := sys.props.get("molecule").contains("true")
 
 moleculeDataModelPaths := Seq("app")
-
-// For some reason, Scala 3.3 can't read generated classes in jars in lib
-// (seems like a binary compatibility issue to be solved - there is likely a simple solution).
-// So we skip packing the generate source files in jars and leave them as managed sources in the target directory.
-moleculeMakeJars := false

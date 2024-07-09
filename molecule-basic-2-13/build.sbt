@@ -1,13 +1,13 @@
 
 name := "molecule-basic-2-13"
-version := "0.9.0"
+version := "0.9.1"
 organization := "org.scalamolecule"
 scalaVersion := "2.13.14"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.3",
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.9.0",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.9.0",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.9.1",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.9.1",
 )
 testFrameworks := Seq(
   new TestFramework("utest.runner.Framework"),
@@ -25,6 +25,3 @@ enablePlugins(MoleculePlugin)
 moleculePluginActive := sys.props.get("molecule").contains("true")
 
 moleculeDataModelPaths := Seq("app")
-
-// Use generated source code (uncomment/delete to use default jar packaging)
-moleculeMakeJars := false
