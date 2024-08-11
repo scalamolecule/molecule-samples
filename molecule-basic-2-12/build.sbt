@@ -1,13 +1,13 @@
 
 name := "molecule-basic-2-12"
-version := "0.9.1"
+version := "0.10.0"
 organization := "org.scalamolecule"
 scalaVersion := "2.12.19"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.3",
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.9.1",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.9.1",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.10.0",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.10.0",
 )
 testFrameworks := Seq(
   new TestFramework("utest.runner.Framework"),
