@@ -25,6 +25,11 @@ object H2Sync extends TestSuite with Helper {
 
       Person.name.age.query.inspect
       /*
+        ========================================
+        QUERY:
+        AttrOneManString("Person", "name", V, Seq(), None, None, Nil, Nil, None, None, Seq(0, 1))
+        AttrOneManInt("Person", "age", V, Seq(), None, None, Nil, Nil, None, None, Seq(0, 2))
+
         SELECT DISTINCT
           Person.name,
           Person.age
@@ -32,6 +37,7 @@ object H2Sync extends TestSuite with Helper {
         WHERE
           Person.name IS NOT NULL AND
           Person.age  IS NOT NULL;
+        ----------------------------------------
      */
     }
   }

@@ -22,7 +22,7 @@ object DatomicZio extends ZIOSpecDefault {
   }
 
 
-  override def spec: Spec[TestEnvironment with Scope, Any] =
+  override def spec: Spec[TestEnvironment & Scope, Any] =
     suite("Datomic")(
       test("zio") {
         for {

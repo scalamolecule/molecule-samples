@@ -33,7 +33,7 @@ object H2Zio extends ZIOSpecDefault {
   }
 
 
-  override def spec: Spec[TestEnvironment with Scope, Any] =
+  override def spec: Spec[TestEnvironment & Scope, Any] =
     suite("JDBC")(
       test("zio") {
         for {
