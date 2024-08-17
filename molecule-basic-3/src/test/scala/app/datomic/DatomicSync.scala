@@ -23,8 +23,6 @@ object DatomicSync extends TestSuite {
     }
 
 
-    // Inspect molecule transformations
-
     "inspect" - {
       implicit val conn: DatomicConn_JVM = Await.result(futConn, 10.second)
 

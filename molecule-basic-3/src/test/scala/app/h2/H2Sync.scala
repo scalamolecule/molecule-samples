@@ -15,8 +15,6 @@ object H2Sync extends TestSuite with Helper {
     }
 
 
-    // Inspect molecule transformations
-
     "inspect" - types { implicit conn =>
 
       // Inspection of transactions not yet implemented

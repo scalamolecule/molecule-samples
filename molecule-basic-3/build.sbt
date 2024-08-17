@@ -2,7 +2,7 @@
 name := "molecule-basic-3"
 version := "0.10.1"
 organization := "org.scalamolecule"
-scalaVersion := "3.5.1-RC2"
+scalaVersion := "3.3.3"
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "utest" % "0.8.3",
