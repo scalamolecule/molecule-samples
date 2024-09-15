@@ -1,6 +1,6 @@
 package app.h2
 
-import app.schema.PersonSchema
+import app.dataModel.schema.PersonSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
 import molecule.sql.core.facade.{JdbcConn_JVM, JdbcHandler_JVM}

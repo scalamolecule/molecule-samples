@@ -1,7 +1,7 @@
 package app.h2
 
-import app.dsl.Person._
-import app.schema.PersonSchema
+import app.dataModel.dsl.Person._
+import app.dataModel.schema.PersonSchema
 import molecule.core.marshalling.JdbcProxy
 import molecule.core.spi.Conn
 import molecule.sql.core.facade.JdbcHandler_JVM

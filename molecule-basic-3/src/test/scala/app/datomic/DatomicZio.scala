@@ -1,7 +1,7 @@
 package app.datomic
 
-import app.dsl.Person.*
-import app.schema.PersonSchema
+import app.dataModel.dsl.Person.*
+import app.dataModel.schema.PersonSchema
 import molecule.core.spi.Conn
 import molecule.core.util.Executor.*
 import molecule.datalog.datomic.facade.DatomicPeer
