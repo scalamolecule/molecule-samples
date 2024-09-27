@@ -9,7 +9,7 @@ import utest._
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 
-object DatomicSync extends TestSuite {
+object Datomic_sync extends TestSuite {
 
   def futConn: Future[DatomicConn_JVM] = DatomicPeer.recreateDb(PersonSchema)
 

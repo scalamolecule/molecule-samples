@@ -5,7 +5,7 @@ import molecule.sql.h2.sync._
 import utest._
 import scala.language.implicitConversions
 
-object H2Sync extends TestSuite with Helper {
+object H2_sync extends TestSuite with Connection {
 
   override lazy val tests = Tests {
 
@@ -15,10 +15,17 @@ object H2Sync extends TestSuite with Helper {
     }
 
 
+    // Inspect molecule transformations
+
     "inspect" - types { implicit conn =>
 
-      // Inspection of transactions not yet implemented
-      // Person.name("Bob").age(42).save.inspect
+      Person.name("Bob").age(42).save.inspect
+      /*
+        INSERT INTO Person (
+          name,
+          age
+        ) VALUES (?, ?)
+       */
 
 
       Person.name.age.query.inspect

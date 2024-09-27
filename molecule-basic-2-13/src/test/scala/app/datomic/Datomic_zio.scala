@@ -2,25 +2,13 @@ package app.datomic
 
 import app.dataModel.dsl.Person._
 import app.dataModel.schema.PersonSchema
-import molecule.core.spi.Conn
-import molecule.core.util.Executor._
 import molecule.datalog.datomic.facade.DatomicPeer
 import molecule.datalog.datomic.zio._
 import zio._
 import zio.test.TestAspect._
 import zio.test._
 
-object DatomicZio extends ZIOSpecDefault {
-
-  // Convert Datomic-idiomatic Future to ZIO Layer
-  def personLayer[T]: ZLayer[T, Throwable, Conn] = {
-    ZLayer.scoped(
-      ZIO.fromFuture(
-        _ => DatomicPeer.recreateDb(PersonSchema)
-      )
-    )
-  }
-
+object Datomic_zio extends ZIOSpecDefault {
 
   override def spec: Spec[TestEnvironment with Scope, Any] =
     suite("Datomic")(
@@ -31,6 +19,6 @@ object DatomicZio extends ZIOSpecDefault {
         } yield {
           assertTrue(result == List(("Bob", 42)))
         }
-      }.provide(personLayer.orDie),
+      }.provide(DatomicPeer.recreateDbZLayer(PersonSchema).orDie),
     ) @@ sequential
 }

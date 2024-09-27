@@ -8,7 +8,7 @@ import scala.language.implicitConversions
 import scala.util.Random
 import scala.util.control.NonFatal
 
-trait Helper {
+trait Connection {
 
   val schema = PersonSchema
 

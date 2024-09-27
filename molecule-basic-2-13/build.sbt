@@ -1,17 +1,26 @@
 
 name := "molecule-basic-2-13"
-version := "0.10.1"
+version := "0.11.0"
 organization := "org.scalamolecule"
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.15"
 
 libraryDependencies ++= Seq(
-  "com.lihaoyi" %% "utest" % "0.8.3",
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.10.1",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.10.1",
+  // Molecule APIs
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.11.0",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.11.0",
+
+  // (transitional dependencies on zio and cats-effect from molecule.core)
+
+  // Test dependencies
+  "com.lihaoyi" %% "utest" % "0.8.4" % Test,
+  "dev.zio" %% "zio-test" % "2.0.15" % Test,
+  "dev.zio" %% "zio-test-sbt" % "2.0.15" % Test,
+  "org.typelevel" %% "munit-cats-effect" % "2.0.0" % Test,
 )
 testFrameworks := Seq(
-  new TestFramework("utest.runner.Framework"),
-  new TestFramework("zio.test.sbt.ZTestFramework")
+  new TestFramework("utest.runner.Framework"), // for sync/async tests
+  new TestFramework("zio.test.sbt.ZTestFramework"), // for zio test
+  new TestFramework("munit.Framework"), // For cats.effect.IO test
 )
 
 // Run tests for all systems sequentially to avoid data locks with db

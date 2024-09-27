@@ -5,7 +5,7 @@ import molecule.sql.h2.sync._
 import utest._
 import scala.language.implicitConversions
 
-object H2Sync extends TestSuite with Connection {
+object H2_sync extends TestSuite with Connection {
 
   override lazy val tests = Tests {
 
@@ -14,8 +14,6 @@ object H2Sync extends TestSuite with Connection {
       Person.name.age.query.get ==> List(("Bob", 42))
     }
 
-
-    // Inspect molecule transformations
 
     "inspect" - types { implicit conn =>
 
@@ -30,6 +28,11 @@ object H2Sync extends TestSuite with Connection {
 
       Person.name.age.query.inspect
       /*
+        ========================================
+        QUERY:
+        AttrOneManString("Person", "name", V, Seq(), None, None, Nil, Nil, None, None, Seq(0, 1))
+        AttrOneManInt("Person", "age", V, Seq(), None, None, Nil, Nil, None, None, Seq(0, 2))
+
         SELECT DISTINCT
           Person.name,
           Person.age
@@ -37,6 +40,7 @@ object H2Sync extends TestSuite with Connection {
         WHERE
           Person.name IS NOT NULL AND
           Person.age  IS NOT NULL;
+        ----------------------------------------
      */
     }
   }

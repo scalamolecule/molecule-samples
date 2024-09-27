@@ -6,7 +6,7 @@ import molecule.sql.h2.async._
 import utest._
 import scala.language.implicitConversions
 
-object H2Async extends TestSuite with Connection {
+object H2_async extends TestSuite with Connection {
 
   override lazy val tests = Tests {
 

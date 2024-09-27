@@ -12,7 +12,7 @@ import zio.test._
 import scala.util.Random
 
 
-object H2Zio extends ZIOSpecDefault {
+object H2_zio extends ZIOSpecDefault {
 
   // Convert Datomic-idiomatic blocking jdbc to ZIO Layer
   def personLayer[T]: ZLayer[T, Throwable, Conn] = {
