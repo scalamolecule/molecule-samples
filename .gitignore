@@ -31,3 +31,4 @@ project/plugins/project/
 project/project/
 node_modules/
 *.json
+*.cache
