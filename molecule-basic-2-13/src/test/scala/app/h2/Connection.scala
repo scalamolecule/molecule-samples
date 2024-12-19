@@ -13,8 +13,8 @@ trait Connection {
   val schema = PersonSchema
 
   def types[T](test: Conn => T): T = {
-    val url   = s"jdbc:h2:mem:test_database_" + Random.nextInt()
-    val proxy = JdbcProxy(
+    val url                = s"jdbc:h2:mem:test_database_" + Random.nextInt()
+    val proxy              = JdbcProxy(
       url,
       schema.sqlSchema_h2,
       schema.metaSchema,
@@ -22,7 +22,7 @@ trait Connection {
       schema.attrMap,
       schema.uniqueAttrs
     )
-    var conn  = JdbcConn_JVM(proxy, null)
+    var conn: JdbcConn_JVM = null
     try {
       Class.forName("org.h2.Driver")
       conn = JdbcHandler_JVM.recreateDb(proxy)
@@ -30,7 +30,7 @@ trait Connection {
     } catch {
       case NonFatal(exc) => throw exc
     } finally {
-      if (conn.sqlConn != null) {
+      if (conn != null && conn.sqlConn != null) {
         conn.sqlConn.close()
       }
     }
