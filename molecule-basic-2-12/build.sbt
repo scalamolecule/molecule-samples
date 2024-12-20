@@ -1,13 +1,13 @@
 
 name := "molecule-basic-2-12"
-version := "0.14.1"
+version := "0.15.0"
 organization := "org.scalamolecule"
 scalaVersion := "2.12.20"
 
 libraryDependencies ++= Seq(
   // Molecule APIs
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.14.1",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.14.1",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.15.0",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.15.0",
 
   // (transitional dependencies on zio and cats-effect from molecule.core)
 
