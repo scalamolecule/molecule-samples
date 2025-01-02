@@ -2,11 +2,7 @@
 
 This repo contains sample projects to get you started with [molecule](https://github.com/scalamolecule/molecule).
 
-## Quick test
-
-Run tests in all 3 sample projects with `./test-all.sh`
-
-Run `test.sh` in each sample project to test individually.
+Run tests in all 3 sample projects with `./test-all.sh` or `./test.sh` in each sample project.
 
 ## Sbt
 

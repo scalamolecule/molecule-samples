@@ -1,24 +1,15 @@
 package app.datomic
 
-import app.dataModel.dsl.Person._
-import app.dataModel.schema.PersonSchema
-import molecule.datalog.datomic.facade.DatomicPeer
+import app.TestSetup
+import app.domain.dsl.Person._
 import molecule.datalog.datomic.zio._
-import zio._
-import zio.test.TestAspect._
-import zio.test._
 
-object Datomic_zio extends ZIOSpecDefault {
+class Datomic_zio extends TestSetup {
 
-  override def spec: Spec[TestEnvironment with Scope, Any] =
-    suite("Datomic")(
-      test("zio") {
-        for {
-          _ <- Person.name("Bob").age(42).save.transact
-          result <- Person.name.age.query.get
-        } yield {
-          assertTrue(result == List(("Bob", 42)))
-        }
-      }.provide(DatomicPeer.recreateDbZLayer(PersonSchema).orDie),
-    ) @@ sequential
+  "zio" - datomic { implicit conn =>
+    runZIO(Person.name("Bob").age(42).save.transact)
+
+    // ZIO[Conn, MoleculeError, List[(String, Int)]]
+    runZIO(Person.name.age.query.get) ==> List(("Bob", 42))
+  }
 }
