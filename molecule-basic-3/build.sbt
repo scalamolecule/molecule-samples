@@ -1,17 +1,17 @@
 
 name := "molecule-basic-3"
-version := "0.15.1"
+version := "0.15.2"
 organization := "org.scalamolecule"
 scalaVersion := "3.3.4"
 
 libraryDependencies ++= Seq(
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.15.1",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.15.1",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.15.2",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.15.2",
   "org.scalameta" %% "munit" % "1.0.3" % Test,
 )
 testFrameworks := Seq(new TestFramework("munit.Framework"))
 Test / parallelExecution := false
-//Test / fork := true
+Test / fork := true
 
 // Molecule plugin that generates molecule boilerplate code from your data model
 enablePlugins(MoleculePlugin)
