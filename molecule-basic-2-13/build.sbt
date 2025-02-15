@@ -1,12 +1,12 @@
 
 name := "molecule-basic-2-13"
-version := "0.15.2"
+version := "0.16.0"
 organization := "org.scalamolecule"
-scalaVersion := "2.13.15"
+scalaVersion := "2.13.16"
 
 libraryDependencies ++= Seq(
-  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.15.2",
-  "org.scalamolecule" %% "molecule-sql-h2" % "0.15.2",
+  "org.scalamolecule" %% "molecule-datalog-datomic" % "0.16.0",
+  "org.scalamolecule" %% "molecule-sql-h2" % "0.16.0",
   "org.scalameta" %% "munit" % "1.0.3" % Test,
 )
 testFrameworks := Seq(new TestFramework("munit.Framework"))
