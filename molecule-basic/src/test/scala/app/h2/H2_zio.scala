@@ -4,7 +4,7 @@ import app.TestSetup
 import app.domain.dsl.Person.*
 import molecule.base.error.MoleculeError
 import molecule.core.spi.Conn
-import molecule.sql.h2.Zio.*
+import molecule.db.sql.h2.Zio.*
 
 class H2_zio extends TestSetup {
 

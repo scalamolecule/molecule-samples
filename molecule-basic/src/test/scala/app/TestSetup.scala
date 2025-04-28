@@ -6,8 +6,8 @@ import molecule.base.error.MoleculeError
 import molecule.core.marshalling.*
 import molecule.core.spi.Conn
 import molecule.core.util.Executor.global
-import molecule.datalog.datomic.facade.DatomicPeer
-import molecule.sql.core.facade.JdbcHandler_JVM
+import molecule.db.datalog.datomic.facade.DatomicPeer
+import molecule.db.sql.core.facade.JdbcHandler_JVM
 import munit.FunSuite
 import zio.{Runtime, Unsafe, ZEnvironment, ZIO}
 import scala.concurrent.Await

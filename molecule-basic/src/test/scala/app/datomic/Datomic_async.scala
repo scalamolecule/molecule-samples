@@ -3,7 +3,7 @@ package app.datomic
 import app.TestSetup
 import app.domain.dsl.Person._
 import molecule.core.util.Executor._
-import molecule.datalog.datomic.async._
+import molecule.db.datalog.datomic.async._
 
 class Datomic_async extends TestSetup {
 

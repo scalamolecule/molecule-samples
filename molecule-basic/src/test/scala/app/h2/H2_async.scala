@@ -3,7 +3,7 @@ package app.h2
 import app.TestSetup
 import app.domain.dsl.Person.*
 import molecule.core.util.Executor.*
-import molecule.sql.h2.async.*
+import molecule.db.sql.h2.async.*
 import scala.language.implicitConversions
 
 class H2_async extends TestSetup {

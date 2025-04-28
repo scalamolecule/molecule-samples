@@ -7,5 +7,5 @@ Run tests in all sample projects (1 for now) with `./test-all.sh`
 Or run tests in a single project with
 
     cd molecule-basic
-    sbt clean compile -Dmolecule=true
+    sbt moleculeGen
     sbt test

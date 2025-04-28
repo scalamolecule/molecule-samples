@@ -2,7 +2,7 @@ package app.datomic
 
 import app.TestSetup
 import app.domain.dsl.Person._
-import molecule.datalog.datomic.Zio._
+import molecule.db.datalog.datomic.Zio._
 
 class Datomic_zio extends TestSetup {
 

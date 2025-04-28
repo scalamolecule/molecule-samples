@@ -2,7 +2,7 @@ package app.datomic
 
 import app.TestSetup
 import app.domain.dsl.Person._
-import molecule.datalog.datomic.sync._
+import molecule.db.datalog.datomic.sync._
 
 class Datomic_sync extends TestSetup {
 

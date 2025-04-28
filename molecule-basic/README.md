@@ -3,5 +3,5 @@
 Compile, generate boilerplate code in jars and run tests:
 
     cd molecule-basic
-    sbt clean compile -Dmolecule=true
+    sbt moleculeGen
     sbt test
