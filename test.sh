@@ -18,7 +18,7 @@ for project in "${projects[@]}"; do
 
   (
     cd "$project"
-    sbt "moleculeGen; test"
+    sbt "clean; moleculeGen; test"
   )
 done
 

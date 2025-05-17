@@ -1,6 +1,6 @@
-## Test project using molecule with Scala 3.x
+## Basic test project using molecule
 
-Compile, generate boilerplate code in jars and run tests:
+Generate molecule boilerplate code and run tests:
 
     cd molecule-basic
     sbt moleculeGen

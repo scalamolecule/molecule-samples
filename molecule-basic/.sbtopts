@@ -1,0 +1,3 @@
+-J-Xms4G
+-J-Xmx10G
+-J-Xss3M
