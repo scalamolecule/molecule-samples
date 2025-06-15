@@ -2,7 +2,7 @@ package app.h2
 
 import app.TestSetup
 import app.domain.dsl.Person.*
-import molecule.db.base.error.MoleculeError
+import molecule.base.error.MoleculeError
 import molecule.db.core.spi.Conn
 import molecule.db.sql.h2.Zio.*
 
