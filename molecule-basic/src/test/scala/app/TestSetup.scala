@@ -1,7 +1,7 @@
 package app
 
 import java.sql.DriverManager
-import app.domain.schema.{PersonSchema_datomic, PersonSchema_h2}
+import app.domain.dsl.Person.metadb.*
 import molecule.base.error.MoleculeError
 import molecule.db.core.marshalling.*
 import molecule.db.core.spi.Conn
@@ -22,7 +22,7 @@ trait TestSetup extends FunSuite {
     val url = "jdbc:h2:mem:test" + Random.nextInt().abs
     Class.forName("org.h2.Driver") // Explicitly load the driver
     Manager { use =>
-      val proxy   = JdbcProxy(url, PersonSchema_h2)
+      val proxy   = JdbcProxy(url, Person_MetaDb_h2())
       val sqlConn = use(DriverManager.getConnection(proxy.url))
       val conn    = use(JdbcHandler_JVM.recreateDb(proxy, sqlConn))
       test(conn)
@@ -31,7 +31,7 @@ trait TestSetup extends FunSuite {
 
 
   def datomic[T](test: Conn => T): T = {
-    val conn = Await.result(DatomicPeer.recreateDb(PersonSchema_datomic), 1.second)
+    val conn = Await.result(DatomicPeer.recreateDb(Person_MetaDb_datomic()), 1.second)
     test(conn)
   }
 
