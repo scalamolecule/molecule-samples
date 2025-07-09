@@ -2,7 +2,7 @@ package app.h2
 
 import app.TestSetup
 import app.domain.dsl.Person._
-import molecule.db.sql.h2.sync._
+import molecule.db.h2.sync._
 
 class H2_sync extends TestSetup {
 

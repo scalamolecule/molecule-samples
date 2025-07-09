@@ -2,7 +2,7 @@ package app.h2
 
 import app.TestSetup
 import app.domain.dsl.Person.*
-import molecule.db.sql.h2.io.*
+import molecule.db.h2.io.*
 
 class H2_io extends TestSetup {
 

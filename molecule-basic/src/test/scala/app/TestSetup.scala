@@ -3,11 +3,10 @@ package app
 import java.sql.DriverManager
 import app.domain.dsl.Person.metadb.*
 import molecule.base.error.MoleculeError
-import molecule.db.core.marshalling.*
-import molecule.db.core.spi.Conn
-import molecule.db.core.util.Executor.global
-import molecule.db.datalog.datomic.facade.DatomicPeer
-import molecule.db.sql.core.facade.JdbcHandler_JVM
+import molecule.db.common.marshalling.*
+import molecule.db.common.spi.Conn
+import molecule.db.common.util.Executor.global
+import molecule.db.common.facade.JdbcHandler_JVM
 import munit.FunSuite
 import zio.{Runtime, Unsafe, ZEnvironment, ZIO}
 import scala.concurrent.Await
@@ -27,12 +26,6 @@ trait TestSetup extends FunSuite {
       val conn    = use(JdbcHandler_JVM.recreateDb(proxy, sqlConn))
       test(conn)
     }.get
-  }
-
-
-  def datomic[T](test: Conn => T): T = {
-    val conn = Await.result(DatomicPeer.recreateDb(Person_MetaDb_datomic()), 1.second)
-    test(conn)
   }
 
 
