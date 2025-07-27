@@ -6,7 +6,7 @@ import molecule.db.h2.sync._
 
 class H2_sync extends TestSetup {
 
-  "sync" - h2 { implicit conn =>
+  "sync" - h2 {
     Person.name("Bob").age(42).save.transact
 
     // List[(String, Int)]

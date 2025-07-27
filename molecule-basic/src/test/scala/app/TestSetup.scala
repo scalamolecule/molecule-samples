@@ -17,14 +17,14 @@ import scala.util.Using.Manager
 
 trait TestSetup extends FunSuite {
 
-  def h2[T](test: Conn => T): T = {
+  def h2[T](test: Conn ?=> T): T = {
     val url = "jdbc:h2:mem:test" + Random.nextInt().abs
     Class.forName("org.h2.Driver") // Explicitly load the driver
     Manager { use =>
       val proxy   = JdbcProxy(url, Person_MetaDb_h2())
       val sqlConn = use(DriverManager.getConnection(proxy.url))
-      val conn    = use(JdbcHandler_JVM.recreateDb(proxy, sqlConn))
-      test(conn)
+      given Conn = use(JdbcHandler_JVM.recreateDb(proxy, sqlConn))
+      test
     }.get
   }
 

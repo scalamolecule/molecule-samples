@@ -7,7 +7,7 @@ import molecule.db.h2.Zio.*
 
 class H2_zio extends TestSetup {
 
-  "zio" - h2 { implicit conn =>
+  "zio" - h2 {
     runZIO(Person.name("Bob").age(42).save.transact)
 
     runZIO(Person.name.age.query.get) ==> List(("Bob", 42))

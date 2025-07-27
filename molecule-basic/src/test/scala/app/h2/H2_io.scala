@@ -6,7 +6,7 @@ import molecule.db.h2.io.*
 
 class H2_io extends TestSetup {
 
-  "io" - h2 { implicit conn =>
+  "io" - h2 {
     for {
       _ <- Person.name("Bob").age(42).save.transact
 

@@ -8,7 +8,7 @@ import scala.language.implicitConversions
 
 class H2_async extends TestSetup {
 
-  "async" - h2 { implicit conn =>
+  "async" - h2 {
     for {
       _ <- Person.name("Bob").age(42).save.transact
 
