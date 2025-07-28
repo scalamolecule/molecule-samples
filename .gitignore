@@ -20,6 +20,7 @@ project/plugins/project/
 # idea specific
 *.idea
 *.bsp
+*.sql
 
 # Scala-IDE specific
 .scala_dependencies
