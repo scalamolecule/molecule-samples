@@ -21,7 +21,7 @@ trait TestSetup extends FunSuite {
     val url = "jdbc:h2:mem:test" + Random.nextInt().abs
     Class.forName("org.h2.Driver") // Explicitly load the driver
     Manager { use =>
-      val proxy   = JdbcProxy(url, Person_MetaDb_h2())
+      val proxy   = JdbcProxy(url, Person_h2())
       val sqlConn = use(DriverManager.getConnection(proxy.url))
       given Conn = use(JdbcHandler_JVM.recreateDb(proxy, sqlConn))
       test
