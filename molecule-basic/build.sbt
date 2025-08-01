@@ -1,11 +1,11 @@
 
 name := "molecule-basic"
-version := "0.24.2"
+version := "0.25.0"
 organization := "org.scalamolecule"
 scalaVersion := "3.7.1"
 
 libraryDependencies ++= Seq(
-  "org.scalamolecule" %% "molecule-db-h2" % "0.24.2",
+  "org.scalamolecule" %% "molecule-db-h2" % "0.25.0",
   "org.scalameta" %% "munit" % "1.1.1" % Test,
 
   // Enforce one version to avoid warnings of multiple dependency versions when running tests
