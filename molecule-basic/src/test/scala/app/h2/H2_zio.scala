@@ -2,7 +2,7 @@ package app.h2
 
 import app.TestSetup
 import app.domain.dsl.Person.*
-import molecule.base.error.MoleculeError
+import molecule.core.error.MoleculeError
 import molecule.db.h2.Zio.*
 
 class H2_zio extends TestSetup {
