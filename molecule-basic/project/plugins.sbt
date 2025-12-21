@@ -1,1 +1,1 @@
-addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.0")
+addSbtPlugin("org.scalamolecule" % "sbt-molecule" % "1.24.1")
